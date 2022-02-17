@@ -1,1 +1,16 @@
+appdirs==1.4.4
+attrs==21.4.0
+cffi==1.15.0
+click==8.0.3
+diskcache==5.4.0
+glean-parser==5.0.1
+glean-sdk==44.0.0
+Jinja2==3.0.3
+jsonschema==4.4.0
+MarkupSafe==2.0.1
 Panda3D==1.10.11.post1
+pathspec==0.9.0
+pycparser==2.21
+pyrsistent==0.18.1
+PyYAML==6.0
+yamllint==1.26.3
