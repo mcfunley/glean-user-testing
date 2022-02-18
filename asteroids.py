@@ -24,6 +24,10 @@ from direct.interval.MetaInterval import Sequence
 from direct.interval.FunctionInterval import Wait, Func
 import sys
 
+from glean import Glean, load_metrics
+
+metrics = load_metrics('metrics.yaml')
+
 # Constants that will control the behavior of the game. It is good to
 # group constants like this so that they can be changed once without
 # having to find everywhere they are used in code
@@ -86,6 +90,12 @@ def genLabelText(text, i):
 class AsteroidsDemo(ShowBase):
 
     def __init__(self):
+        Glean.initialize(
+            application_id='mcfunley-asteroids',
+            application_version='0.0.1',
+            upload_enabled=True,
+            data_dir='.glean')
+
         # Initialize the ShowBase class from which we inherit, which will
         # create a window and set up everything we need for rendering into it.
         ShowBase.__init__(self)
