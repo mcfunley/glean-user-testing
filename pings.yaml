@@ -1,0 +1,12 @@
+$schema: moz://mozilla.org/schemas/glean/pings/2-0-0
+
+main:
+  description: >
+    derp derp
+  include_client_id: true
+  notification_emails:
+    - CHANGE-ME@example.com
+  bugs:
+    - http://bugzilla.mozilla.org/123456789/
+  data_reviews:
+    - http://example.com/path/to/data-review

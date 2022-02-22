@@ -24,9 +24,11 @@ from direct.interval.MetaInterval import Sequence
 from direct.interval.FunctionInterval import Wait, Func
 import sys
 
-from glean import Glean, load_metrics
+from glean import Glean, load_metrics, load_pings
+import logging
 
 metrics = load_metrics('metrics.yaml')
+pings = load_pings('pings.yaml')
 
 # Constants that will control the behavior of the game. It is good to
 # group constants like this so that they can be changed once without
@@ -94,7 +96,10 @@ class AsteroidsDemo(ShowBase):
             application_id='mcfunley-asteroids',
             application_version='0.0.1',
             upload_enabled=True,
-            data_dir='.glean')
+            data_dir='.glean',
+            log_level=logging.DEBUG)
+
+        metrics.app.start.record()
 
         # Initialize the ShowBase class from which we inherit, which will
         # create a window and set up everything we need for rendering into it.

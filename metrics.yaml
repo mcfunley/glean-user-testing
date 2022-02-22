@@ -7,6 +7,8 @@ $tags:
 app:
   start:
     type: event
+    send_in_pings:
+      - main
     description: The app started
     notification_emails:
       - CHANGE-ME@example.com
